@@ -13,17 +13,17 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class UEovoEntity extends TamableAnimal implements GeoEntity {
+public class UEEntity extends TamableAnimal implements GeoEntity {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public UEovoEntity(EntityType<UEovoEntity> entityType, Level level) {
+    public UEEntity(EntityType<UEEntity> entityType, Level level) {
         super(entityType, level);
     }
 
     @Override
     public void registerControllers(ControllerRegistrar controllers) {
-        AnimationController<UEovoEntity> main = new AnimationController<>(this, "main", 5, state -> {
+        AnimationController<UEEntity> main = new AnimationController<>(this, "main", 5, state -> {
             RawAnimation builder = RawAnimation.begin();
             builder.thenLoop("idle");
             return state.setAndContinue(builder);

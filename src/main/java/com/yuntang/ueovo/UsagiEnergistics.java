@@ -2,7 +2,8 @@ package com.yuntang.ueovo;
 
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
-import com.yuntang.ueovo.register.RegisterEntity;
+import com.yuntang.ueovo.init.InitEntity;
+import com.yuntang.ueovo.resource.UEModelMannager;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
@@ -35,11 +36,12 @@ public class UsagiEnergistics
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        UEModelMannager.initResource();
         LOGGER.info("HELLO FROM COMMON SETUP");
 
     }
     private static void initRegister(IEventBus eventBus) {
-        RegisterEntity.ENTITY_TYPES.register(eventBus);
+        InitEntity.ENTITY_TYPES.register(eventBus);
 
     }
     @SubscribeEvent
