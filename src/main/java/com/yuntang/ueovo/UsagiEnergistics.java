@@ -46,7 +46,6 @@ public class UsagiEnergistics
     }
     private static void initRegister(IEventBus eventBus) {
         InitEntity.ENTITY_TYPES.register(eventBus);
-
     }
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
